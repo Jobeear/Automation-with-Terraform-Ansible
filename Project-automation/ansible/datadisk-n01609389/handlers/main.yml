@@ -1,0 +1,8 @@
+---
+# Handlers for the datadisk-n01609389 role
+- name: remount
+  mount:
+    path: "{{ item.mount_point }}"
+    src: "/dev/sdb{{ item.number }}"
+    fstype: "{{ item.filesystem }}"
+    state: mounted

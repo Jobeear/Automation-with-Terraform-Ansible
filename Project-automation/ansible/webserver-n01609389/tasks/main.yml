@@ -1,0 +1,23 @@
+---
+- name: Install Apache web server
+  dnf:
+    name: httpd
+    state: present
+
+- name: Copy hostname to apache
+  shell: | 
+    echo $HOSTNAME > index.html 
+    cp index.html /var/www/html/index.html
+  notify: 
+    - restart_apache
+
+- name: Change file permission
+  file:
+    path: "/var/www/html/index.html"
+    mode: "0444"
+
+- name: Start Apache web server
+  service:
+    name: httpd
+    state: started
+    enabled: yes

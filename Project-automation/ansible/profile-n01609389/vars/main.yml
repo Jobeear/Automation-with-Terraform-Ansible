@@ -1,0 +1,2 @@
+doc_path: /etc/profile
+ansible_hostname: "John Oliver"

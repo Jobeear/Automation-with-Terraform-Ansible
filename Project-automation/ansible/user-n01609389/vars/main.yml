@@ -1,0 +1,36 @@
+---
+users_info:
+  - group_name: "cloudadmins"
+    username: user1000 
+    state: present
+    public_key_path: /home/user1000 
+    
+  - group_name: "wheel"
+    username: user1000
+    state: present
+    public_key_path: /home/user1000
+
+  - group_name: "wheel"
+    username: user2000
+    state: present
+    public_key_path: /home/user2000
+
+  - group_name: "cloudadmins"
+    username: user2000 
+    state: present
+    public_key_path: /home/user2000 
+  
+  - group_name: "cloudadmins"
+    username: user3000 
+    state: present
+    public_key_path: /home/user3000 
+
+  - group_name: "wheel"
+    username: user3000
+    state: present
+    public_key_path: /home/user3000
+
+sudoers_update:
+  - path: /etc/sudoers.d/nopasswd
+    validate: /usr/sbin/visudo -cf %s
+    state: present

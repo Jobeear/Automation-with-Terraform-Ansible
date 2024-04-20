@@ -1,0 +1,7 @@
+---
+- name: Append lines to the /etc/profile file 
+  blockinfile:
+    path: "{{ doc_path }}"
+    block: |
+        #Test block added by Ansible…… {{ ansible_hostname }}
+        export TMOUT=1500

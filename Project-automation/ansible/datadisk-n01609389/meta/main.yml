@@ -1,0 +1,14 @@
+---galaxy_info:
+  author: John Oliver Dela Cruz
+  description: Ansible role for disk configuration
+  min_ansible_version: 2.10
+  platforms:
+  - name: Linux
+    versions:
+    - all
+  galaxy_tags:
+    - system
+    - storage
+    - mount
+dependencies: []
+
